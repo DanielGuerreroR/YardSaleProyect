@@ -1,0 +1,47 @@
+<!--Creacion de la vista de crear una Nueva contraseña-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!--con el tag.nombre creas el tag con una clase
+    div.login
+    y con el tag#nombre lo creas con id
+    div#login-->
+		<div class="login">
+			<div class="form-container">
+				<img src="" alt="logo" class="logo" />
+
+				<h1 class="title">Create a new password</h1>
+				<p class="subtitle">Enter a new password for you account</p>
+
+				<form action="/" class="form">
+					<label for="password" class="laber">Password</label>
+					<input
+						type="password"
+						id="password"
+						placeholder="**********"
+						class="input input-password"
+					/>
+
+					<label for="new-password" class="laber">Re-enter password</label>
+					<input
+						type="password"
+						id="new-password"
+						placeholder="**********"
+						class="input input-password"
+					/>
+
+					<input
+						type="submit"
+						value="Confirm"
+						class="primary-button login-button"
+					/>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
