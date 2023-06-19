@@ -4,7 +4,114 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--traer fuentes desde Google Fonts, con links https://fonts.google.com/specimen/Quicksand?query=Quicksand-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Document</title>
+		<style>
+			/*variables para el proyecto*/
+			:root {
+				--very-light-pink: #c7c7c7;
+				--text-input-field: #f7f7f7;
+				--hospital-green: #acd9b2;
+				--white: #ffffff;
+				--black: #000000;
+				/*declarando variables de tamaños para los textos*/
+				--sm: 14px;
+				--md: 16px;
+				--lg: 18px;
+			}
+			body {
+				font-family: "Quicksand", sans-serif;
+				margin: 0%;
+			}
+			.login {
+				width: 100%;
+				height: 100vh;
+				/*con grid es posible centrar los items de manera tanto
+                vertical como horizontal con solo un parametro*/
+				display: grid;
+				place-items: center;
+			}
+			.form-container {
+				display: grid;
+				/*separaremos el contenido en 3 filas para organizar*/
+				/*auto = para el titulo y subtitulo ocupen lo necesario
+                1fr = una fraccion para los input de password
+                auto = para usar el espacio sobrante para el boton*/
+				grid-template-rows: auto 1fr auto;
+				width: 300px;
+			}
+			.logo {
+				width: 150px;
+				margin-bottom: 48px;
+				justify-self: center;
+				/*lo ocultamos para poder hacerlo aparecer con el diseño responsive*/
+				display: none;
+			}
+			.title {
+				font-size: var(--lg);
+				margin-bottom: 12px;
+				text-align: center;
+			}
+			.subtitle {
+				color: var(--very-light-pink);
+				font-size: var(--md);
+				/*asi como los tragimos de google para letra mas delgada*/
+				font-weight: 300;
+				/*para que no se cruce con el de arriba*/
+				margin-top: 0;
+				/*separar de los otros*/
+				margin-bottom: 32px;
+				text-align: center;
+			}
+			.form {
+				display: flex;
+				flex-direction: column;
+			}
+			.label {
+				font-size: var(--sm);
+				font-weight: bold;
+				margin-bottom: 4px;
+			}
+			.input {
+				background-color: var(--text-input-field);
+				border: none;
+				border-radius: 8px;
+				height: 30px;
+				font-size: var(--md);
+				padding: 6px;
+				margin-bottom: 12px;
+			}
+			.primary-button {
+				background-color: var(--hospital-green);
+				border-radius: 8px;
+				border: none;
+				color: var(--white);
+				/*ocupe el 100%*/
+				width: 100%;
+				/*cuando se ponga el cursor salga una mano no el mouse*/
+				cursor: pointer;
+				font-size: var(--md);
+				font-weight: bold;
+				height: 50px;
+			}
+			.login-buttohn {
+				margin-top: 14px;
+				margin-bottom: 30px;
+			}
+			/*todo se ve bien en la vista mobil, excepto el logo, hay que traer el logo
+            con responsive*/
+			@media (max-width: 640px) {
+				.logo {
+					display: block;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<!--con el tag.nombre creas el tag con una clase
@@ -13,7 +120,7 @@
     div#login-->
 		<div class="login">
 			<div class="form-container">
-				<img src="" alt="logo" class="logo" />
+				<img src="./assets/logos/logo_yard_sale.svg" alt="logo" class="logo" />
 
 				<h1 class="title">Create a new password</h1>
 				<p class="subtitle">Enter a new password for you account</p>
