@@ -29,6 +29,77 @@
 				font-family: "Quicksand", sans-serif;
 				margin: 0%;
 			}
+			.cards-container {
+				display: grid;
+				/*si queremos columnas iguales esta es una opcion
+                grid-template-columns: 1fr 1fr;*/
+				/*esta esta opcion para solo cambiar un parametro con responsive*/
+				/*repite, #de veces, tamaño columna
+				grid-template-columns: (repeat(2, 1fr));*/
+				/*tambien es posible declararlo para que se ajuste al tamaño de la
+                pantalla con un tamaño especifico*/
+				/*auto llenar la pantalla, tamaño de columnas*/
+				grid-template-columns: repeat(auto-fill, 240px);
+				/*asi añadimos espacio entre las columnas*/
+				gap: 26px;
+				/*centrar contenido*/
+				place-content: center;
+			}
+			.product-card {
+				width: 240px;
+			}
+			.product-card img {
+				width: 240px;
+				height: 240px;
+				border-radius: 20px;
+				/*la imagen tendra su tamaño independiente del width y height establecido
+                asi ya no se distorciona
+				object-fit: cover;*/
+			}
+			.product-info {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 12px;
+			}
+			.product-info div p:nth-child(1) {
+				font-weight: bold;
+				font-size: var(--md);
+				margin-top: 0px;
+				margin-bottom: 4px;
+			}
+			.product-info div p:nth-child(2) {
+				font-size: var(--sm);
+				margin-top: 0;
+				margin-bottom: 0;
+				color: var(--very-light-pink);
+			}
+			.product-info figure {
+				/*el contenedor figure por default tiene un margen*/
+				margin: 0;
+			}
+			.product-info figure img {
+				/*la regla anterios de ".product-card img" esta tomando
+                todas las img dentro de el, por eso con una regla mas especifica
+                reducimos el icono*/
+				width: 35px;
+				height: 35px;
+			}
+			@media (max-width: 640px) {
+				.cards-container {
+					display: grid;
+					/*le reducimos el tamaño de las columnaspara asi poder tener mas columnas
+                    en pantallas mas pequeñas*/
+					grid-template-columns: repeat(auto-fill, 140px);
+				}
+				.product-card {
+					width: 140px;
+				}
+				.product-card img {
+					width: 140px;
+					height: 140px;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -42,205 +113,284 @@
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div>
-		</section>
-		<!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div> </section
-		><!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div> </section
-		><!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div> </section
-		><!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div> </section
-		><!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div> </section
-		><!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div> </section
-		><!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div> </section
-		><!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
 				</div>
-			</div> </section
-		><!--contenedor general de las cards para grid de elementos-->
-		<section class="main-container">
-			<!--contenedor especifico de cada una de las cards-->
-			<div class="cards-container">
 				<!--construir las cards-->
 				<div class="product-card">
 					<img
 						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 						alt=""
 					/>
-					<!--creamos dos contenedores, para texto y logo, de esta manera
-                    lo podemos organizar con flexbox-->
-					<div>
-						<p>$120,00</p>
-						<p>Bike</p>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
 					</div>
-					<figure>
-						<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
-					</figure>
+				</div>
+				<!--construir las cards-->
+				<div class="product-card">
+					<img
+						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						alt=""
+					/>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
+					</div>
+				</div>
+				<!--construir las cards-->
+				<div class="product-card">
+					<img
+						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						alt=""
+					/>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
+					</div>
+				</div>
+				<!--construir las cards-->
+				<div class="product-card">
+					<img
+						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						alt=""
+					/>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
+					</div>
+				</div>
+				<!--construir las cards-->
+				<div class="product-card">
+					<img
+						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						alt=""
+					/>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
+					</div>
+				</div>
+				<!--construir las cards-->
+				<div class="product-card">
+					<img
+						src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+						alt=""
+					/>
+					<!--contenedor general para organizar la parte baja de la card-->
+					<div class="product-info">
+						<!--creamos dos contenedores, para texto y logo, de esta manera
+                        lo podemos organizar con flexbox-->
+						<div>
+							<p>$120,00</p>
+							<p>Bike</p>
+						</div>
+						<figure>
+							<img src="./assets/icons/bt_add_to_cart.svg" alt="" />
+						</figure>
+					</div>
 				</div>
 			</div>
 		</section>
