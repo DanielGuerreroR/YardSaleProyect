@@ -1,0 +1,60 @@
+<!--creaccion de la navbar de desktop y mobile con responsive, para toda la interfaz web-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--traer fuentes desde Google Fonts, con links https://fonts.google.com/specimen/Quicksand?query=Quicksand-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
+			rel="stylesheet" />
+		<title>Navbar</title>
+		<style>
+			/*variables para el proyecto*/
+			:root {
+				--very-light-pink: #c7c7c7;
+				--text-input-field: #f7f7f7;
+				--hospital-green: #acd9b2;
+				--white: #ffffff;
+				--black: #000000;
+				/*declarando variables de tamaños para los textos*/
+				--sm: 14px;
+				--md: 16px;
+				--lg: 18px;
+			}
+			body {
+				font-family: "Quicksand", sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<!-- menu de apartado mobile -->
+			<img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
+			<div class="navbar-left">
+				<img src="./assets/logos/logo_yard_sale.svg" alt="logo" class="logo" />
+				<!-- menu normal de desktop -->
+				<ul>
+					<li><a href="">All</a></li>
+					<li><a href="">Clothes</a></li>
+					<li><a href="">Electronics</a></li>
+					<li><a href="">Furniture</a></li>
+					<li><a href="">Toys</a></li>
+					<li><a href="">Others</a></li>
+				</ul>
+			</div>
+			<div class="navbar-right">
+				<!-- correo y despliegue de menu -->
+				<li>example@gmail.com</li>
+				<li class="navbar-shopping-cart">
+					<!-- logo del carro de compra -->
+					<img src="./assets/icons/icon_shopping_cart.svg" alt="" />
+					<!-- notificaciones del carro de compra -->
+					<div>2</div>
+				</li>
+			</div>
+		</nav>
+	</body>
+</html>
