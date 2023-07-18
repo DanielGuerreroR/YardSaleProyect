@@ -1,1 +1,57 @@
 <!--aqui realizaremos la fucion de todos los componenetes que tenemos de HTML, CSS y juntarlo con JavaScript-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--traer fuentes desde Google Fonts, con links https://fonts.google.com/specimen/Quicksand?query=Quicksand-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>YardSale</title>
+	</head>
+	<body>
+		<!--Navbar de menu-->
+		<nav>
+			<!-- menu de apartado mobile -->
+			<img src="./assets/icons/icon_menu.svg" alt="menu" class="menu" />
+			<div class="navbar-left">
+				<img src="./assets/logos/logo_yard_sale.svg" alt="logo" class="logo" />
+				<!-- menu normal de desktop -->
+				<ul>
+					<li><a href="">All</a></li>
+					<li><a href="">Clothes</a></li>
+					<li><a href="">Electronics</a></li>
+					<li><a href="">Furniture</a></li>
+					<li><a href="">Toys</a></li>
+					<li><a href="">Others</a></li>
+				</ul>
+			</div>
+			<div class="navbar-right">
+				<ul>
+					<!-- correo y despliegue de menu -->
+					<li class="navbar-email">example@gmail.com</li>
+					<li class="navbar-shopping-cart">
+						<!-- logo del carro de compra -->
+						<img src="./assets/icons/icon_shopping_cart.svg" alt="" />
+						<!-- notificaciones del carro de compra -->
+						<div>2</div>
+					</li>
+				</ul>
+			</div>
+			<!--Menu desplegable del navbar en desktop-->
+			<div class="desktop-menu inactive">
+				<ul>
+					<li><a href="/" class="title">My orders</a></li>
+					<li><a href="/">My account</a></li>
+					<li><a href="/">Sign out</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<script src="./main.js"></script>
+	</body>
+</html>

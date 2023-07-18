@@ -1,0 +1,144 @@
+/*variables para el proyecto*/
+:root {
+    --very-light-pink: #c7c7c7;
+    --text-input-field: #f7f7f7;
+    --hospital-green: #acd9b2;
+    --white: #ffffff;
+    --black: #000000;
+    /*declarando variables de tamaños para los textos*/
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+body {
+    font-family: "Quicksand", sans-serif;
+}
+
+/*creamos una nueva clase 'inactive' la cual usaremos para hacer
+desaparecer elementos cuando no los necesitamos*/
+.inactive {
+    display: none;
+}
+
+/*Navbar menu*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.menu {
+    display: none;
+}
+.navbar-left {
+    display: flex;
+}
+.logo {
+    width: 100px;
+}
+.navbar-left ul,
+.navbar-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.navbar-left ul {
+    margin-left: 12px;
+}
+.navbar-left ul a {
+    text-decoration: none;
+    color: var(--very-light-pink);
+    border: 1px solid var(--white);
+    padding: 8px;
+    border-radius: 8px;
+}
+.navbar-left ul a:hover {
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);
+}
+.navbar-email {
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+    margin-right: 12px;
+    cursor: pointer;
+}
+.navbar-shopping-cart {
+    position: relative;
+}
+.navbar-shopping-cart div {
+    width: 16px;
+    height: 16px;
+    background: var(--hospital-green);
+    border-radius: 50%;
+    font-size: var(--sm);
+    font-weight: var(--sm);
+    /* organizar la bolita en la posicion */
+    position: absolute;
+    top: -6px;
+    right: -3px;
+    /* centrar el texto en la bola */
+    display: flex;
+    /* nos aseguramos que se centre tanto horizontal como verticalmente */
+    justify-content: center;
+    justify-items: center;
+}
+
+/*Menu desplegable del navbar en desktop*/
+.desktop-menu {
+    position: absolute;
+    top: 70px; /*el inspector nos puede decir el tamaño de elementos*/
+    right: 60px;
+    background: var(--white);
+    width: 100px;
+    height: auto;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
+    /*el borde inferior es super pone con el especifico, por eso se quita*/
+    padding: 20px 20px 0 20px;
+}
+.desktop-menu ul {
+    /*quitar los puntos de listado*/
+    list-style: none;
+    /*las listas vienen con pading y margin por defecto*/
+    padding: 0;
+    margin: 0;
+}
+.desktop-menu ul li {
+    /*alinear a la derecha*/
+    text-align: end;
+}
+.desktop-menu ul li a {
+    color: var(--black);
+    text-decoration: none;
+    /*recuerda los objetos inline no se pueden aplicar margin y otros*/
+    display: inline-block; /*podemos cambiarlo a un inline-block para que tenga estas propiedades*/
+    margin-bottom: 20px;
+}
+.desktop-menu ul li a:nth-child(1),
+.desktop-menu ul li a:nth-child(2) {
+    font-weight: bold;
+}
+.desktop-menu ul li:last-child {
+    padding-top: 20px;
+    border-top: 1px solid var(--very-light-pink);
+}
+.desktop-menu ul li:last-child a {
+    color: var(--hospital-green);
+    font-size: var(--sm);
+}
+
+/* parte mobile */
+@media (max-width: 640px) {
+    .menu {
+        display: block;
+    }
+    .navbar-left ul {
+        display: none;
+    }
+    .navbar-email {
+        display: none;
+    }
+}
