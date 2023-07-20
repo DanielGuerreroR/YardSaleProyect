@@ -135,6 +135,7 @@ nav {
 	position: absolute;
 	top: 60px;
 	padding: 24px;
+	background-color: var(--white);
 	/*organizar elementos*/
 	/* display: flex;
 	flex-direction: column;
@@ -175,11 +176,98 @@ nav {
 	color: var(--hospital-green);
 }
 
+/* carrito de compras */
+.product-detail {
+	background-color: var(--white);
+	width: 360px;
+	padding: 24px;
+	/*deja el tamaño declarado (width y height) y no le suma
+    los tamaños extra (margin, paddin, etc), si no que el 
+    tamaño declarado es el maximo y los extra deben acogerce
+    a ese maximo, haciendolo una suma total y no un agregado*/
+	box-sizing: border-box;
+	position: absolute;
+	right: 0;
+}
+.title-container {
+	display: flex;
+}
+.title-container img {
+	transform: rotate(180deg);
+	margin-right: 14px;
+}
+.title {
+	font-size: var(--lg);
+	font-weight: bold;
+}
+.order {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: 16px;
+	align-items: center;
+	background-color: var(--text-input-field);
+	margin-bottom: 25px;
+	border-radius: 8px;
+	/* arriba y abajo 0, a los costados 24 */
+	padding: 0 24px;
+}
+.order p:nth-child(1) {
+	display: flex;
+	flex-direction: column;
+}
+.order p span:nth-child(1) {
+	font-size: var(--md);
+	font-weight: bold;
+}
+.order p:nth-child(2) {
+	text-align: end;
+	font-weight: bold;
+}
+.primary-button {
+	background-color: var(--hospital-green);
+	border-radius: 8px;
+	border: none;
+	color: var(--white);
+	/*ocupe el 100%*/
+	width: 100%;
+	/*cuando se ponga el cursor salga una mano no el mouse*/
+	cursor: pointer;
+	font-size: var(--md);
+	font-weight: bold;
+	height: 50px;
+}
+.shopping-cart {
+	display: grid;
+	/* tamaño de la imagen, texto, espacio, texto */
+	grid-template-columns: auto 1fr auto auto;
+	/* espaciado para separar las cajas */
+	gap: 16px;
+	margin-bottom: 24px;
+	align-items: center;
+}
+.shopping-cart figure {
+	margin: 0;
+}
+.shopping-cart figure img {
+	width: 70px;
+	height: 70px;
+	border-radius: 20px;
+}
+.shopping-cart p:nth-child(2) {
+	color: var(--very-light-pink);
+}
+.shopping-cart p:nth-child(3) {
+	font-size: var(--md);
+	font-weight: bold;
+}
+
 /* parte mobile */
 @media (max-width: 640px) {
+	/* menu de amburguesa mobile */
 	.menu {
 		display: block;
 	}
+	/* ocultar componentes navbar desktop */
 	.navbar-left ul {
 		display: none;
 	}
@@ -188,6 +276,10 @@ nav {
 	}
 	.desktop-menu {
 		display: none;
+	}
+	/* carrito de compras */
+	.product-detail {
+		width: 100vw;
 	}
 }
 
