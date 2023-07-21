@@ -261,6 +261,65 @@ nav {
 	font-weight: bold;
 }
 
+/*contenedor de las tarjetas de productos*/
+.cards-container {
+	display: grid;
+	/*si queremos columnas iguales esta es una opcion
+	grid-template-columns: 1fr 1fr;*/
+	/*esta esta opcion para solo cambiar un parametro con responsive*/
+	/*repite, #de veces, tamaño columna
+	grid-template-columns: (repeat(2, 1fr));*/
+	/*tambien es posible declararlo para que se ajuste al tamaño de la
+	pantalla con un tamaño especifico*/
+	/*auto llenar la pantalla, tamaño de columnas*/
+	grid-template-columns: repeat(auto-fill, 240px);
+	/*asi añadimos espacio entre las columnas*/
+	gap: 26px;
+	/*centrar contenido*/
+	place-content: center;
+	margin-top: 30px;
+}
+.product-card {
+	width: 240px;
+}
+.product-card img {
+	width: 240px;
+	height: 240px;
+	border-radius: 20px;
+	/*la imagen tendra su tamaño independiente del width y height establecido
+	asi ya no se distorciona
+	object-fit: cover;*/
+}
+.product-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 12px;
+}
+.product-info div p:nth-child(1) {
+	font-weight: bold;
+	font-size: var(--md);
+	margin-top: 0px;
+	margin-bottom: 4px;
+}
+.product-info div p:nth-child(2) {
+	font-size: var(--sm);
+	margin-top: 0;
+	margin-bottom: 0;
+	color: var(--very-light-pink);
+}
+.product-info figure {
+	/*el contenedor figure por default tiene un margen*/
+	margin: 0;
+}
+.product-info figure img {
+	/*la regla anterios de ".product-card img" esta tomando
+	todas las img dentro de el, por eso con una regla mas especifica
+	reducimos el icono*/
+	width: 35px;
+	height: 35px;
+}
+
 /* parte mobile */
 @media (max-width: 640px) {
 	/* menu de amburguesa mobile */
@@ -280,6 +339,20 @@ nav {
 	/* carrito de compras */
 	.product-detail {
 		width: 100vw;
+	}
+	/* cartas de productos */
+	.cards-container {
+		display: grid;
+		/*le reducimos el tamaño de las columnaspara asi poder tener mas columnas
+		en pantallas mas pequeñas*/
+		grid-template-columns: repeat(auto-fill, 140px);
+	}
+	.product-card {
+		width: 140px;
+	}
+	.product-card img {
+		width: 140px;
+		height: 140px;
 	}
 }
 
