@@ -136,6 +136,8 @@ nav {
 	top: 60px;
 	padding: 24px;
 	background-color: var(--white);
+	left: 0;
+	width: 100%;
 	/*organizar elementos*/
 	/* display: flex;
 	flex-direction: column;
@@ -176,11 +178,10 @@ nav {
 	color: var(--hospital-green);
 }
 
-/* carrito de compras */
-.product-detail {
+/*estilos aside en general*/
+aside {
 	background-color: var(--white);
 	width: 360px;
-	padding: 24px;
 	/*deja el tamaño declarado (width y height) y no le suma
     los tamaños extra (margin, paddin, etc), si no que el 
     tamaño declarado es el maximo y los extra deben acogerce
@@ -188,6 +189,11 @@ nav {
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
+}
+
+/* carrito de compras */
+#shoppingCartContainer {
+	padding: 24px;
 }
 .title-container {
 	display: flex;
@@ -261,6 +267,71 @@ nav {
 	font-weight: bold;
 }
 
+/*product detail*/
+
+.product-detail-close {
+	background: var(--white);
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	top: 24px;
+	left: 24px;
+	z-index: 2;
+	padding: 12px;
+	border-radius: 50%;
+}
+.product-detail-close:hover {
+	cursor: pointer;
+}
+#productDetail > img:nth-child(2) {
+	width: 100%;
+	height: 360px;
+	/*manesillas de reloj en las es quinas, top left, top right, bottom right, bottom left*/
+	border-radius: 0 0 20px 20px;
+}
+#productDetail .product-info {
+	/* arriba, derecha, abajo, izquierda*/
+	margin: 24px 24px 0 24px;
+}
+#productDetail .product-info p:nth-child(1) {
+	font-weight: bold;
+	font-size: var(--md);
+	margin-top: 0;
+	margin-bottom: 4px;
+}
+#productDetail .product-info p:nth-child(2) {
+	color: var(--very-light-pink);
+	font-size: var(--md);
+	margin-top: 0;
+	margin-bottom: 36px;
+}
+#productDetail .product-info p:nth-child(3) {
+	color: var(--very-light-pink);
+	font-size: var(--sm);
+	margin-top: 0;
+	margin-bottom: 36px;
+}
+.primary-button {
+	background-color: var(--hospital-green);
+	border-radius: 8px;
+	border: none;
+	color: var(--white);
+	/*ocupe el 100%*/
+	width: 100%;
+	/*cuando se ponga el cursor salga una mano no el mouse*/
+	cursor: pointer;
+	font-size: var(--md);
+	font-weight: bold;
+	height: 50px;
+}
+.add-to-cart-button {
+	display: flex;
+	/* centrar verticalmente */
+	align-items: center;
+	/* centrar horizontalmente */
+	justify-content: center;
+}
+
 /*contenedor de las tarjetas de productos*/
 .cards-container {
 	display: grid;
@@ -290,29 +361,29 @@ nav {
 	asi ya no se distorciona
 	object-fit: cover;*/
 }
-.product-info {
+.cards-container .product-info {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 12px;
 }
-.product-info div p:nth-child(1) {
+.cards-container .product-info div p:nth-child(1) {
 	font-weight: bold;
 	font-size: var(--md);
 	margin-top: 0px;
 	margin-bottom: 4px;
 }
-.product-info div p:nth-child(2) {
+.cards-container .product-info div p:nth-child(2) {
 	font-size: var(--sm);
 	margin-top: 0;
 	margin-bottom: 0;
 	color: var(--very-light-pink);
 }
-.product-info figure {
+.cards-container .product-info figure {
 	/*el contenedor figure por default tiene un margen*/
 	margin: 0;
 }
-.product-info figure img {
+.cards-container .product-info figure img {
 	/*la regla anterios de ".product-card img" esta tomando
 	todas las img dentro de el, por eso con una regla mas especifica
 	reducimos el icono*/
@@ -336,8 +407,8 @@ nav {
 	.desktop-menu {
 		display: none;
 	}
-	/* carrito de compras */
-	.product-detail {
+	/*aside en general*/
+	aside {
 		width: 100vw;
 	}
 	/* cartas de productos */

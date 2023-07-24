@@ -77,7 +77,7 @@
 		</nav>
 
 		<!--carro de compras-->
-		<aside class="product-detail inactive">
+		<aside id="shoppingCartContainer" class="inactive">
 			<div class="title-container">
 				<img src="./assets/icons/flechita.svg" alt="arrow" />
 				<h1 class="title">Shopping Cart</h1>
@@ -145,6 +145,28 @@
 			<button class="primary-button">Check out</button>
 		</aside>
 
+		<!--detalles del producto-->
+		<aside id="productDetail" class="inactive">
+			<div class="product-detail-close">
+				<img src="./assets/icons/icon_close.png" alt="close" />
+			</div>
+			<img
+				src="https://images.pexels.com/photos/2412368/pexels-photo-2412368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+				alt="bike" />
+			<div class="product-info">
+				<p>$35,00</p>
+				<p>Bike</p>
+				<p>
+					With its practical position, this bike also fulfills a decorative
+					function, add your hall o workspace.
+				</p>
+				<button class="primary-button add-to-cart-button">
+					<img src="./assets/icons/bt_add_to_cart.svg" alt="add to cart" />
+					Add to cart
+				</button>
+			</div>
+		</aside>
+
 		<!--inicio de muestra de productos-->
 		<!--contenedor general de las cards para grid de elementos-->
 		<section class="main-container">
@@ -170,6 +192,7 @@
 				</div>-->
 			</div>
 		</section>
+
 		<script src="./main.js"></script>
 	</body>
 </html>
